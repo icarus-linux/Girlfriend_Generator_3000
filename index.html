@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Girlfriend Generator 3000</title>
+<title>Love Machine 3000</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg-deep: #1F1329;
-    --bg-panel: #2C1B3D;
-    --pink: #FF5C8A;
-    --gold: #F4C15C;
-    --lavender: #B8A3D6;
-    --cream: #FBF1E6;
-    --green-ok: #6FCF97;
+    --bg-deep: #fff4f5;
+    --bg-panel: #f0c4cc;
+    --pink: #c7365b;
+    --gold: #e6bd7a;
+    --lavender: #805563;
+    --cream: #fffaf4;
+    --green-ok: #66826d;
   }
 
   * { box-sizing: border-box; }
@@ -288,21 +288,25 @@
   }
 
   :root {
-    --bg-deep: #f3f0e7;
-    --bg-panel: #d8f36a;
-    --pink: #ff625b;
-    --gold: #f4d84b;
-    --lavender: #51534b;
-    --cream: #fffdf5;
-    --green-ok: #315cff;
-    --ink: #191b16;
-    --line: #252820;
+    --bg-deep: #fff4f5;
+    --bg-panel: #f0c4cc;
+    --pink: #c7365b;
+    --gold: #e6bd7a;
+    --lavender: #805563;
+    --cream: #fffaf4;
+    --green-ok: #66826d;
+    --ink: #542433;
+    --line: #8f435a;
+    --blue: #9b3455;
   }
 
   html, body {
     display: block;
     min-height: 100%;
-    background: var(--bg-deep);
+    background:
+      radial-gradient(ellipse at 14% 10%, rgba(232,151,169,0.28), transparent 38%),
+      radial-gradient(ellipse at 90% 88%, rgba(230,189,122,0.22), transparent 36%),
+      var(--bg-deep);
     color: var(--ink);
     font-family: 'Space Grotesk', sans-serif;
     padding: 0;
@@ -314,8 +318,8 @@
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background-image: radial-gradient(rgba(25,27,22,0.13) 1px, transparent 1px);
-    background-size: 18px 18px;
+    background-image: radial-gradient(rgba(84,36,51,0.10) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
 
   button, input { font: inherit; }
@@ -331,21 +335,21 @@
     border-bottom: 2px solid var(--ink);
   }
   .brand-lockup { display: flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; }
-  .brand-symbol { display: grid; place-items: center; width: 42px; height: 42px; border: 2px solid var(--ink); background: var(--pink); font-size: 22px; transform: rotate(-5deg); }
+  .brand-symbol { display: grid; place-items: center; width: 42px; height: 42px; border: 2px solid var(--ink); border-radius: 50%; background: linear-gradient(145deg, #ed9daf, var(--pink)); color: white; font-size: 22px; }
   .brand-copy { font-family: 'Bungee', sans-serif; font-size: 14px; line-height: 1.15; }
   .edition { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-align: center; }
   .saved-open { display: inline-flex; align-items: center; gap: 9px; min-height: 42px; padding: 0 14px; border: 2px solid var(--ink); background: var(--cream); cursor: pointer; font-size: 13px; font-weight: 700; }
-  .saved-open:hover { background: var(--gold); }
+  .saved-open:hover { background: #f5dce1; }
   .saved-count { display: grid; place-items: center; width: 22px; height: 22px; background: var(--ink); color: var(--cream); border-radius: 50%; font-size: 11px; }
 
   .layout { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); align-items: center; gap: 56px; padding: 44px 0 48px; }
   .editorial { position: relative; padding: 8px 0; animation: enter-left 500ms ease both; }
   .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 16px; font-size: 11px; font-weight: 700; letter-spacing: 1.3px; text-transform: uppercase; }
   .eyebrow::before { content: ""; width: 8px; height: 8px; background: var(--pink); border: 1px solid var(--ink); }
-  .editorial h1 { max-width: 540px; margin: 0; font-family: 'Bungee', sans-serif; font-size: 48px; line-height: 1.12; letter-spacing: 0; }
+  .editorial h1 { max-width: 540px; margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700; font-size: 68px; line-height: 0.91; letter-spacing: 0; color: #762d45; }
   .editorial-copy { max-width: 410px; margin: 18px 0 0; font-size: 16px; line-height: 1.55; }
   .mascot-scene { display: flex; align-items: center; gap: 18px; margin: 30px 0 28px; }
-  .mascot-scene img { display: block; width: 156px; height: 156px; object-fit: contain; border: 2px solid var(--ink); background: var(--gold); box-shadow: 7px 7px 0 var(--ink); }
+  .mascot-emoji { display: grid; place-items: center; width: 156px; height: 156px; border: 2px solid var(--ink); border-radius: 50%; background: radial-gradient(circle at 35% 28%, #fff5f2, #eea5b5 72%); box-shadow: 7px 7px 0 var(--ink); font-size: 74px; }
   .mascot-stamp { display: grid; place-items: center; width: 108px; height: 108px; padding: 12px; border: 2px solid var(--ink); background: var(--blue, #315cff); color: white; font-family: 'Bungee', sans-serif; font-size: 14px; line-height: 1.25; text-align: center; transform: rotate(7deg); }
   .stat-strip { display: flex; gap: 0; max-width: 400px; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
   .stat { flex: 1; padding: 12px 10px 12px 0; }
@@ -353,22 +357,23 @@
   .stat strong { display: block; font-family: 'Bungee', sans-serif; font-size: 17px; font-weight: 400; }
   .stat span { display: block; margin-top: 2px; font-size: 10px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; }
 
-  .machine { width: 100%; max-width: 590px; justify-self: end; padding: 14px; overflow: hidden; border: 3px solid var(--ink); border-radius: 4px; background: var(--bg-panel); box-shadow: 10px 10px 0 var(--ink); animation: enter-right 500ms ease both; }
+  .machine { width: 100%; max-width: 590px; justify-self: end; padding: 14px; overflow: hidden; border: 3px solid var(--line); border-radius: 20px 20px 6px 6px; background: linear-gradient(145deg, #f5d5da, #e9aebc); box-shadow: 9px 10px 0 rgba(84,36,51,0.22); animation: enter-right 500ms ease both; }
   .machine::before { display: none; }
-  .machine-topline { display: flex; justify-content: space-between; gap: 12px; padding: 2px 2px 12px; font-size: 10px; font-weight: 700; letter-spacing: 0.8px; }
+  .machine-topline { display: flex; justify-content: space-between; gap: 12px; padding: 2px 2px 12px; color: #762d45; font-size: 10px; font-weight: 700; letter-spacing: 0.8px; }
   .machine-status { white-space: nowrap; }
-  .machine-status::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 6px; border-radius: 50%; background: #315cff; }
-  .screen { min-height: 470px; justify-content: center; padding: 28px; border: 2px solid var(--ink); border-radius: 2px; background: var(--cream); color: var(--ink); }
+  .machine-status::before { content: "♥"; display: inline-block; margin-right: 6px; color: var(--green-ok); font-size: 12px; }
+  .machine-topline::after { content: "♥  ♥  ♥"; color: var(--pink); font-size: 11px; letter-spacing: 1px; }
+  .screen { min-height: 470px; justify-content: center; padding: 28px; border: 2px solid #dba7b3; border-radius: 13px; background: var(--cream); color: var(--ink); }
 
   .intro { text-align: left; }
   .intro .big-emoji { display: none; }
-  .intro h2, .q-text, .roast h2 { font-family: 'Bungee', sans-serif; font-weight: 400; letter-spacing: 0; }
-  .intro h2 { margin: 0 0 8px; color: var(--ink); font-size: 25px; line-height: 1.28; }
+  .intro h2, .q-text, .roast h2, .result-name, .dialog-header h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700; letter-spacing: 0; }
+  .intro h2 { margin: 0 0 8px; color: #762d45; font-size: 32px; line-height: 1.05; }
   .intro p { max-width: 430px; margin: 0 0 24px; color: #51534b; font-size: 14px; line-height: 1.55; }
   .chance-control { padding: 15px 0 19px; border-top: 1px solid rgba(25,27,22,0.35); }
   .chance-heading, .range-labels { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
   .chance-heading label { font-size: 12px; font-weight: 700; }
-  .chance-heading output { padding: 4px 8px; background: var(--pink); font-family: 'Bungee', sans-serif; font-size: 13px; }
+  .chance-heading output { padding: 4px 10px; border-radius: 999px; background: var(--pink); color: white; font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700; }
   .chance-slider { width: 100%; height: 8px; margin: 15px 0 8px; accent-color: var(--pink); cursor: pointer; }
   .range-labels { font-size: 9px; font-weight: 700; letter-spacing: 0.7px; }
   .start-btn, .again-btn, .share-btn, .favorite-btn, .close-dialog, .remove-favorite {
@@ -381,20 +386,20 @@
     cursor: pointer;
     transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
   }
-  .start-btn, .again-btn { width: 100%; padding: 12px 18px; background: var(--ink); color: white; }
-  .start-btn:hover, .again-btn:hover { background: var(--pink); color: var(--ink); }
+  .start-btn, .again-btn { width: 100%; padding: 12px 18px; border-color: #762d45; border-radius: 999px; background: #762d45; color: white; }
+  .start-btn:hover, .again-btn:hover { background: var(--pink); border-color: var(--pink); color: white; }
   .start-btn:active, .again-btn:active, .share-btn:active, .favorite-btn:active { transform: translate(2px, 2px); }
   .screen button:focus-visible, .saved-open:focus-visible, .chance-slider:focus-visible { outline: 3px solid var(--green-ok); outline-offset: 3px; }
 
   .progress-track { gap: 5px; margin-bottom: 22px; }
-  .progress-track span { height: 8px; border: 1px solid var(--ink); border-radius: 0; background: transparent; }
+  .progress-track span { height: 8px; border: 1px solid #dba7b3; border-radius: 999px; background: #fae9ed; }
   .progress-track span.done { background: var(--pink); }
-  .q-label { margin-bottom: 10px; color: #51534b; font-size: 10px; font-weight: 700; letter-spacing: 1px; }
-  .q-text { max-width: 450px; margin-bottom: 22px; font-size: 21px; line-height: 1.35; }
+  .q-label { margin-bottom: 10px; color: #805563; font-size: 10px; font-weight: 700; letter-spacing: 1px; }
+  .q-text { max-width: 450px; margin-bottom: 22px; color: #762d45; font-size: 29px; line-height: 1.05; }
   .options { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
-  .opt-btn { min-height: 70px; padding: 12px; border: 1.5px solid var(--ink); border-radius: 2px; background: transparent; color: var(--ink); font-size: 12px; font-weight: 600; line-height: 1.4; }
-  .opt-btn::before { content: "0" attr(data-i); display: block; margin-bottom: 6px; color: #315cff; font-family: 'Bungee', sans-serif; font-size: 10px; }
-  .opt-btn:hover { border-color: var(--ink); background: var(--gold); }
+  .opt-btn { min-height: 70px; padding: 12px; border: 1.5px solid #dba7b3; border-radius: 10px; background: #fff3f5; color: var(--ink); font-size: 12px; font-weight: 600; line-height: 1.4; }
+  .opt-btn::before { content: "♥ 0" attr(data-i); display: block; margin-bottom: 6px; color: var(--pink); font-size: 10px; }
+  .opt-btn:hover { border-color: var(--pink); background: #fbe1e7; }
 
   .loading-wrap { text-align: left; }
   .loading-wrap .lw-label { min-height: 1.3em; margin-bottom: 18px; color: var(--ink); font-family: 'Bungee', sans-serif; font-size: 18px; }
@@ -403,21 +408,21 @@
   .bar-pct { color: #51534b; font-weight: 700; }
   .roast { text-align: left; }
   .roast .big-emoji { margin: 0 0 12px; font-size: 34px; }
-  .roast h2 { margin: 0 0 12px; color: var(--ink); font-size: 22px; line-height: 1.4; }
+  .roast h2 { margin: 0 0 12px; color: #762d45; font-size: 30px; line-height: 1.05; }
   .roast p { color: #51534b; font-size: 13px; }
-  .match-badge { margin-bottom: 12px; padding: 5px 9px; border: 1px solid var(--ink); border-radius: 0; background: var(--gold); color: var(--ink); font-size: 10px; font-weight: 700; letter-spacing: 0.7px; }
+  .match-badge { margin-bottom: 12px; padding: 6px 11px; border: 1px solid #bd7184; border-radius: 999px; background: #fae3e8; color: #762d45; font-size: 10px; font-weight: 700; letter-spacing: 0.7px; }
   .avatar-wrap { margin-bottom: 12px; }
-  .avatar-wrap img { width: 220px; height: 220px; max-height: none; aspect-ratio: 1; object-fit: cover; border: 2px solid var(--ink); border-radius: 2px; padding: 0; background: var(--gold); }
-  .result-name { margin: 0 0 2px; color: var(--ink); font-family: 'Bungee', sans-serif; font-size: 20px; font-weight: 400; line-height: 1.3; }
+  .avatar-wrap img { width: 220px; height: 220px; max-height: none; aspect-ratio: 1; object-fit: contain; border: 2px solid #bd7184; border-radius: 12px; padding: 0; background: #fae3e8; }
+  .result-name { margin: 0 0 2px; color: #762d45; font-size: 30px; font-weight: 700; line-height: 1; }
   .result-tag { margin-bottom: 10px; color: #51534b; font-size: 11px; }
-  .result-bio { margin: 0 0 15px; padding: 10px 12px; border: 1px solid var(--ink); border-radius: 2px; background: #f1eee4; font-size: 12px; line-height: 1.45; }
+  .result-bio { margin: 0 0 15px; padding: 12px 14px; border: 1px solid #e6c0c9; border-radius: 10px; background: #fff1f3; font-size: 12px; line-height: 1.5; }
   .result-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
-  .share-btn, .favorite-btn { padding: 9px 10px; background: var(--gold); }
+  .share-btn, .favorite-btn { padding: 9px 10px; border-radius: 999px; background: #f2dfbd; }
   .share-btn { background: var(--blue, #315cff); color: white; }
   .favorite-btn.is-saved { background: var(--pink); }
   .footer-note { margin: 18px 0 0; color: #51534b; font-size: 10px; font-weight: 700; letter-spacing: 0.7px; }
 
-  .favorites-dialog { width: min(480px, calc(100% - 32px)); max-height: min(75vh, 620px); padding: 22px; border: 3px solid var(--ink); border-radius: 2px; background: var(--cream); color: var(--ink); box-shadow: 8px 8px 0 var(--ink); }
+  .favorites-dialog { width: min(480px, calc(100% - 32px)); max-height: min(75vh, 620px); padding: 22px; border: 3px solid var(--line); border-radius: 16px; background: var(--cream); color: var(--ink); box-shadow: 8px 8px 0 rgba(84,36,51,0.22); }
   .favorites-dialog::backdrop { background: rgba(25,27,22,0.65); }
   .dialog-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
   .dialog-header h2 { margin: 0; font-family: 'Bungee', sans-serif; font-size: 18px; font-weight: 400; }
@@ -435,10 +440,10 @@
     .layout { grid-template-columns: 1fr; gap: 25px; padding: 30px 0 40px; }
     .editorial { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 18px; }
     .editorial .eyebrow, .editorial h1, .editorial-copy, .stat-strip { grid-column: 1; }
-    .editorial h1 { font-size: 40px; }
+    .editorial h1 { font-size: 56px; }
     .editorial-copy { margin-top: 12px; }
     .mascot-scene { grid-column: 2; grid-row: 1 / span 3; flex-direction: column; margin: 0; }
-    .mascot-scene img { width: 108px; height: 108px; }
+    .mascot-emoji { width: 108px; height: 108px; font-size: 54px; }
     .mascot-stamp { width: 78px; height: 78px; font-size: 10px; }
     .stat-strip { max-width: none; margin-top: 20px; }
     .machine { justify-self: stretch; max-width: none; }
@@ -453,9 +458,9 @@
     .saved-open { min-height: 38px; padding: 0 9px; font-size: 11px; }
     .layout { gap: 18px; padding-top: 22px; }
     .editorial { grid-template-columns: minmax(0, 1fr) 90px; column-gap: 8px; }
-    .editorial h1 { font-size: 31px; }
+    .editorial h1 { font-size: 46px; }
     .editorial-copy { font-size: 13px; }
-    .mascot-scene img { width: 82px; height: 82px; }
+    .mascot-emoji { width: 82px; height: 82px; font-size: 42px; }
     .mascot-stamp { width: 65px; height: 65px; padding: 6px; font-size: 9px; }
     .stat { padding-top: 9px; padding-bottom: 9px; }
     .stat strong { font-size: 14px; }
@@ -463,7 +468,7 @@
     .machine { padding: 9px; box-shadow: 6px 6px 0 var(--ink); }
     .machine-topline { font-size: 8px; }
     .screen { min-height: 400px; padding: 20px 16px; }
-    .intro h2 { font-size: 21px; }
+    .intro h2 { font-size: 27px; }
     .options { grid-template-columns: 1fr; }
     .opt-btn { min-height: 58px; }
     .opt-btn::before { display: inline; margin: 0 8px 0 0; }
@@ -482,7 +487,7 @@
   <header class="masthead">
     <a class="brand-lockup" href="./" aria-label="Girlfriend Generator 3000 home">
       <span class="brand-symbol" aria-hidden="true">♥</span>
-      <span class="brand-copy">Girlfriend<br>Generator 3000</span>
+      <span class="brand-copy">LOVE MACHINE<br>3000</span>
     </a>
     <div class="edition">INDEPENDENTLY UNVERIFIED • VOL. 01</div>
     <button class="saved-open" id="savedBtn" type="button" aria-label="Open saved matches">
@@ -492,22 +497,22 @@
 
   <main class="layout">
     <section class="editorial" aria-labelledby="pageTitle">
-      <p class="eyebrow">LOVE IS A QUESTIONABLE ALGORITHM</p>
-      <h1 id="pageTitle">FIND YOUR<br>QUESTIONABLE<br>SOULMATE.</h1>
-      <p class="editorial-copy">Five questions. One suspiciously confident machine. Absolutely no peer-reviewed romance.</p>
+      <p class="eyebrow">A MATCHMAKER WITH QUESTIONABLE SCIENCE</p>
+      <h1 id="pageTitle">Love at<br>first<br>algorithm.</h1>
+      <p class="editorial-copy">Five questions. One suspiciously confident love machine. Your romantic future is in questionable hands.</p>
       <div class="mascot-scene">
-        <img src="https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Cupid-3000" alt="The generator's tiny robot mascot">
+        <div class="mascot-emoji" aria-hidden="true">💌</div>
         <div class="mascot-stamp">0%<br>ACCURATE</div>
       </div>
       <div class="stat-strip" aria-label="Generator statistics">
-        <div class="stat"><strong>115</strong><span>Questionable matches</span></div>
+        <div class="stat"><strong>52</strong><span>Possible outcomes</span></div>
         <div class="stat"><strong>103</strong><span>Roast outcomes</span></div>
         <div class="stat"><strong>∞</strong><span>Bad decisions</span></div>
       </div>
     </section>
 
     <section class="machine" aria-label="Girlfriend Generator game">
-      <div class="machine-topline"><span>GENERATOR / 3000</span><span class="machine-status">SYSTEM WEIRDLY ONLINE</span></div>
+      <div class="machine-topline"><span>LOVE MACHINE / 3000</span><span class="machine-status">HEARTS ONLINE</span></div>
       <div class="screen" id="screen" aria-live="polite"></div>
     </section>
   </main>
@@ -530,7 +535,14 @@
   try { savedState = JSON.parse(localStorage.getItem(storageKey) || '{}'); } catch (error) { savedState = {}; }
   let roastChance = Number(savedState.roastChance);
   if (!Number.isFinite(roastChance) || roastChance < 5 || roastChance > 95) roastChance = 60;
-  let favorites = Array.isArray(savedState.favorites) ? savedState.favorites : [];
+  let favorites = Array.isArray(savedState.favorites) ? savedState.favorites
+    .filter(person => !person?.file?.includes('api.dicebear.com'))
+    .map(person => {
+    if (person && person.file && !person.file.startsWith('http') && !person.file.startsWith('images/')) {
+      return { ...person, file: `images/${person.file}` };
+    }
+    return person;
+  }) : [];
 
   function saveState() {
     try { localStorage.setItem(storageKey, JSON.stringify({ roastChance, favorites })); } catch (error) {}
@@ -602,72 +614,90 @@
 
   let currentQ = 0;
 
-  // Photos live in the same folder as this HTML file.
-  // NOTE: "meganfoxtransform..." was truncated in the screenshot — filename below
-  // is a best guess (meganfoxtransform.png). If it doesn't load, rename the file
-  // to match, or tell me the exact filename and I'll fix the reference.
+  // Match photos are kept together under images/.
   const matches = [
-    { name: "7de Laan",        file: "7delaan.jpg",             tag: "97% Match", bio: "Been in the same storyline for 20 years and somehow still has drama left.", weight: 1 },
-    { name: "Hand",            file: "hand.png",                tag: "82% Match", bio: "Strong, silent type. Mostly just a hand.", weight: 1 },
-    { name: "Lucy Chen",       file: "lucychen.jpg",             tag: "93% Match", bio: "The algorithm is very confident about this one. We're not sure why.", weight: 1 },
-    { name: "Mamma Coco",      file: "mammacoco.jpg",            tag: "88% Match", bio: "Warm, wise, and will absolutely feed you whether you're hungry or not.", weight: 1 },
-    { name: "Marko",           file: "marko.png",                tag: "90% Match", bio: "Solid. Reliable. Slightly mysterious. Ten out of ten vibes.", weight: 3 },
-    { name: "Megan Fox (Transformed)", file: "meganfoxtransformers.jpg", tag: "95% Match", bio: "High-maintenance in a very literal, possibly robotic sense.", weight: 1 },
-    { name: "Morné",           file: "morne.png",                tag: "89% Match", bio: "Will win every argument, including the ones he started.", weight: 3 },
-    { name: "Puss in Boots",   file: "pussinboots.jpg",          tag: "99% Match", bio: "Charming, dramatic, owns exactly one outfit and commits to it fully.", weight: 1 },
-    { name: "René",            file: "rene.png",                tag: "91% Match", bio: "Mysteriously good at parking. Otherwise a complete wildcard.", weight: 3 },
-    { name: "Sexy Shrek",      file: "sexyshrek.jpg",            tag: "100% Match", bio: "Green, swamp-dwelling, and weirdly the most confident option here.", weight: 1 },
-    { name: "Shrek Dragon",    file: "shrekdragon.png",          tag: "96% Match", bio: "It's complicated. It's also on fire. Somehow it works.", weight: 1 },
-    { name: "Shrek Witch",     file: "shrekwitch.jpg",           tag: "94% Match", bio: "Low-key terrifying, high-key iconic.", weight: 1 },
-    { name: "Teresa Lisbon",   file: "teresalisbon.jpg",         tag: "92% Match", bio: "Will figure out you're lying before you've finished the sentence.", weight: 1 },
-    { name: "Total Drama Island", file: "totaldrama island.jpg", tag: "87% Match", bio: "Chaotic, competitive, and somehow always ends in an explosion.", weight: 1 },
-    { name: "Wednesday",       file: "wednesday.jpg",            tag: "98% Match", bio: "Will not smile for the photo. Will not smile for anything.", weight: 1 }
+    /* Fictional and object entries are disabled during real-photo testing.
+    { name: "7de Laan",        file: "images/7delaan.jpg",             tag: "97% Match", bio: "Been in the same storyline for 20 years and somehow still has drama left.", weight: 1 },
+    { name: "Hand",            file: "images/hand.png",                tag: "82% Match", bio: "Strong, silent type. Mostly just a hand.", weight: 1 },
+    { name: "Lucy Chen",       file: "images/lucychen.jpg",             tag: "93% Match", bio: "The algorithm is very confident about this one. We're not sure why.", weight: 1 },
+    { name: "Mamma Coco",      file: "images/mammacoco.jpg",            tag: "88% Match", bio: "Warm, wise, and will absolutely feed you whether you're hungry or not.", weight: 1 },
+    */
+    { name: "Marko",           file: "images/marko.png",                tag: "90% Match", bio: "Solid. Reliable. Slightly mysterious. Ten out of ten vibes.", weight: 3 },
+    { name: "Megan Fox (Transformed)", file: "images/meganfoxtransformers.jpg", tag: "95% Match", bio: "High-maintenance in a very literal, possibly robotic sense.", weight: 1 },
+    { name: "Morné",           file: "images/morne.png",                tag: "89% Match", bio: "Will win every argument, including the ones he started.", weight: 3 },
+    /* Fictional characters are disabled during real-photo testing.
+    { name: "Puss in Boots",   file: "images/pussinboots.jpg",          tag: "99% Match", bio: "Charming, dramatic, owns exactly one outfit and commits to it fully.", weight: 1 },
+    */
+    { name: "René",            file: "images/rene.png",                tag: "91% Match", bio: "Mysteriously good at parking. Otherwise a complete wildcard.", weight: 3 },
+    /*
+    { name: "Sexy Shrek",      file: "images/sexyshrek.jpg",            tag: "100% Match", bio: "Green, swamp-dwelling, and weirdly the most confident option here.", weight: 1 },
+    { name: "Shrek Dragon",    file: "images/shrekdragon.png",          tag: "96% Match", bio: "It's complicated. It's also on fire. Somehow it works.", weight: 1 },
+    { name: "Shrek Witch",     file: "images/shrekwitch.jpg",           tag: "94% Match", bio: "Low-key terrifying, high-key iconic.", weight: 1 },
+    { name: "Teresa Lisbon",   file: "images/teresalisbon.jpg",         tag: "92% Match", bio: "Will figure out you're lying before you've finished the sentence.", weight: 1 },
+    { name: "Total Drama Island", file: "images/totaldrama island.jpg", tag: "87% Match", bio: "Chaotic, competitive, and somehow always ends in an explosion.", weight: 1 },
+    { name: "Wednesday",       file: "images/wednesday.jpg",            tag: "98% Match", bio: "Will not smile for the photo. Will not smile for anything.", weight: 1 }
+    */
   ];
 
-  const extraMatchNames = [
-    "Captain Side-Eye", "Duchess of Unread Messages", "Princess Puddle Boots", "Baroness Biscuit", "The Wi-Fi Witch",
-    "Lady Oat Milk", "Countess Crash Landing", "Miss Mildly Haunted", "Professor Pajamas", "Queen of the Group Chat",
-    "The Snack Goblin", "Disco Cryptid", "Socks-with-Sandals Sorceress", "Mysterious Bus Stop Girl", "Tiny Thunderstorm",
-    "Auntie from Another Dimension", "The Spreadsheet Siren", "Glitter Goblin", "Mothman’s Roommate", "The Last Brain Cell",
-    "Princess of Lost AirPods", "Barista of Destiny", "Lady Lint Roller", "The Unlicensed Mermaid", "Dame Dramatic Pause",
-    "Space Cowgirl Brenda", "The Soup Oracle", "Haunted Doll with Boundaries", "Miss Takes-the-Last-Fry", "Goblin CEO",
-    "Lady of the Laundry Pile", "The Emotional Support Vampire", "Queen Quinoa", "Cyberpunk Cinderella", "The Polite Menace",
-    "Duchess Doomscroll", "Agent 404", "The Tiny Tornado", "Lady Waffle House", "The Moon’s Intern",
-    "Princess Power Nap", "The Cryptid Next Door", "Baroness of Bad Puns", "Madame Mild Inconvenience", "The Parking Lot Phantom",
-    "Queen of Extra Sauce", "The Overthinking Fairy", "Sirena Sidequest", "Lady Last-Minute", "The Friendly Swamp Witch",
-    "Miss Can’t Pick a Movie", "Astronaut with Snacks", "The Velvet Menace", "Dame of the Desk Chair", "The Local Time Traveler",
-    "Princess Password Reset", "The Cozy Chaos", "Lady Carbonara", "The Accidental Supervillain", "Duchess of Tiny Bags",
-    "The Extremely Online Elf", "Queen of One More Episode", "Miss Suspiciously Specific", "The Backup Plan", "Lady Boba Fett",
-    "The Dramatic Pigeon Lawyer", "Princess of the Spare Charger", "The Midnight Librarian", "Baroness Bubble Tea", "The Unbothered Werewolf",
-    "Dame Fumbles-a-High-Five", "The Sofa Succubus", "Queen of the Wrong Exit", "Lady Definitely-not-a-Spy", "The Garden Goblin",
-    "Princess of Weird Little Hobbies", "The Snack-Time Necromancer", "Madame Plot Twist", "Miss Probably a Wizard", "The Chill Doomsday Prepper",
-    "Lady Soup Season", "The Freelance Mermaid", "Duchess of Voice Notes", "The Polka-Dot Phantom", "Queen of Mild Chaos",
-    "Princess of the Loading Screen", "The Undercover Grandmother", "Lady Actual Cannibal (of snacks)", "The Haunted Houseplant", "Dame No Context",
-    "The Celestial Cashier", "Miss Definitely Has a Spreadsheet", "The Goblin’s Landlord", "Queen of Unnecessary Lore", "Lady Not-A-Cat",
-    "The Backup Dancer", "Princess of the Side Quest", "The Friendly Final Boss", "Duchess of the Deep-Fried", "Your Algorithmic Soulmate-ish"
+  const linkedMatches = [
+    { name: "Russian Photo Match", file: "https://mixingimages.in/wp-content/uploads/2025/06/Russian-Girl-Photo-23.jpg", tag: "89% Match", bio: "A striking mystery portrait, delivered to the algorithm with zero context.", weight: 1 },
+    { name: "Pinterest Brunette No. 1", file: "https://i.pinimg.com/474x/34/0d/87/340d87a5d7bbae5d0c9ad58609685f0b.jpg?nii=t", tag: "86% Match", bio: "Has the vibe of someone who knows the best cafe and will gatekeep it lovingly.", weight: 1 },
+    { name: "Pinterest Brunette No. 2", file: "https://i.pinimg.com/736x/97/94/36/97943629ed553e86b0805b57b62996ee.jpg", tag: "92% Match", bio: "A mysterious profile pick. The machine has decided it is probably excellent taste.", weight: 1 },
+    { name: "Pinterest Blonde Match", file: "https://i.pinimg.com/564x/92/95/c8/9295c8f718c31bd40e4d8d0e6b7acf47.jpg", tag: "88% Match", bio: "Looks like she has a playlist for every possible minor inconvenience.", weight: 1 },
+    { name: "Sophie Rain", file: "https://www.mandatory.com/wp-content/uploads/sites/10/2026/01/Sophie-Rain-3.jpg?w=683", tag: "94% Match", bio: "Internet-famous, camera-ready, and definitely not impressed by this algorithm.", weight: 1 }
+  ];
+  matches.push(...linkedMatches);
+
+  const localImageFiles = [
+    "Alden.jpg", "Dixie-D’Amelio-MN2S.webp", "Fotos vir GG 3000.webp", "OFAMMfemale.jpeg", "Zendaya.2.webp",
+    "baileynune.jpeg", "baileynunehurt.jpeg", "baileynunerugby.jpeg", "bella.jpeg", "bellfingerbiote.jpeg",
+    "bonniebluebre.jpeg", "bunnyhanna.jpeg", "espessrosabrina.jpeg", "gothchiock.jpeg", "gothmommy.jpeg",
+    "gottymin.jpeg", "hanna.jpeg", "hannacar.jpeg", "hannauwu.jpeg", "images (1).jpg", "images (2).jpg",
+    "images (3).jpg", "images (4).jpg", "images.jpg", "isatagoth.jpeg", "isnta gotrsh.jpeg", "lillyballs.jpeg",
+    "lillybutt.jpeg", "lillyellyphilips.jpg", "lillyoutsidechairs.avif", "lillyphils.jpeg", "lucychen.jpeg",
+    "lucychencop.jpeg", "lucyhotchen.jpeg", "ofamFemale.jpeg", "oyuntalorguitar.jpeg", "sabrinaespresso.jpeg",
+    "sophie.jpeg", "sophiesits.webp", "tamara.jpeg", "tamarachair.jpg", "tamaralipbite.jpg", "youngtalor.jpeg"
   ];
 
-  const extraMatchBios = [
-    "Has excellent taste and a suspicious number of tabs open.",
-    "Will steal one fry, then defend the theft in court.",
-    "A mysterious vibe, a practical jacket, and absolutely no context.",
-    "Can turn a quick errand into a three-act adventure.",
-    "Knows a shortcut. It has never once been shorter.",
-    "Brings snacks, strong opinions, and a backup charger.",
-    "Seems intimidating until a dog walks by.",
-    "The algorithm insists this is a real person. The algorithm lies sometimes.",
-    "Will remember your coffee order and your most embarrassing story.",
-    "A rare combination of chaos, kindness, and excellent playlist curation."
+  const localImageNames = {
+    "Dixie-D’Amelio-MN2S.webp": "Dixie D’Amelio",
+    "Fotos vir GG 3000.webp": "GG 3000 Crew",
+    "OFAMMfemale.jpeg": "OFAM Female",
+    "Zendaya.2.webp": "Zendaya",
+    "espessrosabrina.jpeg": "Espresso Sabrina",
+    "gothchiock.jpeg": "Goth Chick",
+    "gottymin.jpeg": "Goth Mini",
+    "isnta gotrsh.jpeg": "Insta Goth",
+    "images.jpg": "Mystery Photo",
+    "images (1).jpg": "Mystery Photo 1",
+    "images (2).jpg": "Mystery Photo 2",
+    "images (3).jpg": "Mystery Photo 3",
+    "images (4).jpg": "Mystery Photo 4",
+    "oyuntalorguitar.jpeg": "Oyun Talor Guitar",
+    "ofamFemale.jpeg": "OFAM Female 2",
+    "sophiesits.webp": "Sophie Sitting"
+  };
+
+  const localImageBios = [
+    "A local-folder mystery. The algorithm claims it knows the backstory.",
+    "Matched entirely on vibes and an extremely scientific filename.",
+    "The machine found this portrait and immediately pretended it knew the lore.",
+    "A surprise from the photo folder. Proceed with zero expectations.",
+    "The algorithm is confident. The evidence is a picture and a dream.",
+    "Local legend energy, according to a machine with no field experience."
   ];
 
-  const extraMatches = extraMatchNames.map((name, index) => ({
-    name,
-    file: `https://api.dicebear.com/9.x/adventurer/svg?seed=${encodeURIComponent(name)}`,
-    tag: `${78 + (index % 23)}% Match`,
-    bio: extraMatchBios[index % extraMatchBios.length],
-    weight: 1
-  }));
-  matches.push(...extraMatches);
+  const localImageMatches = localImageFiles.map((file, index) => {
+    const imageName = file.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ').replace(/\b[a-z]/g, letter => letter.toUpperCase());
+    return {
+      name: localImageNames[file] || imageName,
+      file: `images/${file}`,
+      tag: `${80 + ((index * 7) % 20)}% Match`,
+      bio: localImageBios[index % localImageBios.length],
+      weight: 1
+    };
+  });
+  matches.push(...localImageMatches);
 
   function pickWeighted(list) {
     const totalWeight = list.reduce((sum, item) => sum + (item.weight || 1), 0);
@@ -683,15 +713,15 @@
     screen.innerHTML = `
       <div class="intro">
         <div class="big-emoji">💘</div>
-        <p class="eyebrow">CALIBRATE THE CHAOS</p>
-        <h2>Ready for questionable science?</h2>
-        <p>Answer five questions and let the machine make a deeply unserious decision.</p>
+        <p class="eyebrow">TUNE YOUR HEART</p>
+        <h2>Let the love machine decide.</h2>
+        <p>Tell the machine your romantic type. It promises to be only a little too confident.</p>
         <div class="chance-control">
           <div class="chance-heading"><label for="roastChance">Romance / roast balance</label><output id="roastChanceValue" for="roastChance">${roastChance}% roast</output></div>
           <input class="chance-slider" id="roastChance" type="range" min="5" max="95" step="5" value="${roastChance}">
           <div class="range-labels"><span>TRUE LOVE</span><span>PUBLIC HUMILIATION</span></div>
         </div>
-        <button class="start-btn" id="startBtn" type="button">Begin the experiment <span aria-hidden="true">→</span></button>
+        <button class="start-btn" id="startBtn" type="button">Start matchmaking <span aria-hidden="true">♥</span></button>
       </div>
     `;
     document.getElementById('roastChance').addEventListener('input', event => {
