@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Girlfriend Generator 3000</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg-deep: #1F1329;
@@ -286,26 +286,291 @@
   @media (prefers-reduced-motion: reduce) {
     .bar-inner, .opt-btn, .start-btn, .again-btn { transition: none; }
   }
+
+  :root {
+    --bg-deep: #f3f0e7;
+    --bg-panel: #d8f36a;
+    --pink: #ff625b;
+    --gold: #f4d84b;
+    --lavender: #51534b;
+    --cream: #fffdf5;
+    --green-ok: #315cff;
+    --ink: #191b16;
+    --line: #252820;
+  }
+
+  html, body {
+    display: block;
+    min-height: 100%;
+    background: var(--bg-deep);
+    color: var(--ink);
+    font-family: 'Space Grotesk', sans-serif;
+    padding: 0;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: radial-gradient(rgba(25,27,22,0.13) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+
+  button, input { font: inherit; }
+  button { color: inherit; }
+
+  .app-shell { width: min(1220px, calc(100% - 48px)); margin: 0 auto; }
+  .masthead {
+    min-height: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .brand-lockup { display: flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; }
+  .brand-symbol { display: grid; place-items: center; width: 42px; height: 42px; border: 2px solid var(--ink); background: var(--pink); font-size: 22px; transform: rotate(-5deg); }
+  .brand-copy { font-family: 'Bungee', sans-serif; font-size: 14px; line-height: 1.15; }
+  .edition { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-align: center; }
+  .saved-open { display: inline-flex; align-items: center; gap: 9px; min-height: 42px; padding: 0 14px; border: 2px solid var(--ink); background: var(--cream); cursor: pointer; font-size: 13px; font-weight: 700; }
+  .saved-open:hover { background: var(--gold); }
+  .saved-count { display: grid; place-items: center; width: 22px; height: 22px; background: var(--ink); color: var(--cream); border-radius: 50%; font-size: 11px; }
+
+  .layout { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); align-items: center; gap: 56px; padding: 44px 0 48px; }
+  .editorial { position: relative; padding: 8px 0; animation: enter-left 500ms ease both; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 16px; font-size: 11px; font-weight: 700; letter-spacing: 1.3px; text-transform: uppercase; }
+  .eyebrow::before { content: ""; width: 8px; height: 8px; background: var(--pink); border: 1px solid var(--ink); }
+  .editorial h1 { max-width: 540px; margin: 0; font-family: 'Bungee', sans-serif; font-size: 48px; line-height: 1.12; letter-spacing: 0; }
+  .editorial-copy { max-width: 410px; margin: 18px 0 0; font-size: 16px; line-height: 1.55; }
+  .mascot-scene { display: flex; align-items: center; gap: 18px; margin: 30px 0 28px; }
+  .mascot-scene img { display: block; width: 156px; height: 156px; object-fit: contain; border: 2px solid var(--ink); background: var(--gold); box-shadow: 7px 7px 0 var(--ink); }
+  .mascot-stamp { display: grid; place-items: center; width: 108px; height: 108px; padding: 12px; border: 2px solid var(--ink); background: var(--blue, #315cff); color: white; font-family: 'Bungee', sans-serif; font-size: 14px; line-height: 1.25; text-align: center; transform: rotate(7deg); }
+  .stat-strip { display: flex; gap: 0; max-width: 400px; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
+  .stat { flex: 1; padding: 12px 10px 12px 0; }
+  .stat + .stat { padding-left: 14px; border-left: 1px solid rgba(25,27,22,0.4); }
+  .stat strong { display: block; font-family: 'Bungee', sans-serif; font-size: 17px; font-weight: 400; }
+  .stat span { display: block; margin-top: 2px; font-size: 10px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; }
+
+  .machine { width: 100%; max-width: 590px; justify-self: end; padding: 14px; overflow: hidden; border: 3px solid var(--ink); border-radius: 4px; background: var(--bg-panel); box-shadow: 10px 10px 0 var(--ink); animation: enter-right 500ms ease both; }
+  .machine::before { display: none; }
+  .machine-topline { display: flex; justify-content: space-between; gap: 12px; padding: 2px 2px 12px; font-size: 10px; font-weight: 700; letter-spacing: 0.8px; }
+  .machine-status { white-space: nowrap; }
+  .machine-status::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 6px; border-radius: 50%; background: #315cff; }
+  .screen { min-height: 470px; justify-content: center; padding: 28px; border: 2px solid var(--ink); border-radius: 2px; background: var(--cream); color: var(--ink); }
+
+  .intro { text-align: left; }
+  .intro .big-emoji { display: none; }
+  .intro h2, .q-text, .roast h2 { font-family: 'Bungee', sans-serif; font-weight: 400; letter-spacing: 0; }
+  .intro h2 { margin: 0 0 8px; color: var(--ink); font-size: 25px; line-height: 1.28; }
+  .intro p { max-width: 430px; margin: 0 0 24px; color: #51534b; font-size: 14px; line-height: 1.55; }
+  .chance-control { padding: 15px 0 19px; border-top: 1px solid rgba(25,27,22,0.35); }
+  .chance-heading, .range-labels { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .chance-heading label { font-size: 12px; font-weight: 700; }
+  .chance-heading output { padding: 4px 8px; background: var(--pink); font-family: 'Bungee', sans-serif; font-size: 13px; }
+  .chance-slider { width: 100%; height: 8px; margin: 15px 0 8px; accent-color: var(--pink); cursor: pointer; }
+  .range-labels { font-size: 9px; font-weight: 700; letter-spacing: 0.7px; }
+  .start-btn, .again-btn, .share-btn, .favorite-btn, .close-dialog, .remove-favorite {
+    min-height: 46px;
+    border: 2px solid var(--ink);
+    border-radius: 2px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+  }
+  .start-btn, .again-btn { width: 100%; padding: 12px 18px; background: var(--ink); color: white; }
+  .start-btn:hover, .again-btn:hover { background: var(--pink); color: var(--ink); }
+  .start-btn:active, .again-btn:active, .share-btn:active, .favorite-btn:active { transform: translate(2px, 2px); }
+  .screen button:focus-visible, .saved-open:focus-visible, .chance-slider:focus-visible { outline: 3px solid var(--green-ok); outline-offset: 3px; }
+
+  .progress-track { gap: 5px; margin-bottom: 22px; }
+  .progress-track span { height: 8px; border: 1px solid var(--ink); border-radius: 0; background: transparent; }
+  .progress-track span.done { background: var(--pink); }
+  .q-label { margin-bottom: 10px; color: #51534b; font-size: 10px; font-weight: 700; letter-spacing: 1px; }
+  .q-text { max-width: 450px; margin-bottom: 22px; font-size: 21px; line-height: 1.35; }
+  .options { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+  .opt-btn { min-height: 70px; padding: 12px; border: 1.5px solid var(--ink); border-radius: 2px; background: transparent; color: var(--ink); font-size: 12px; font-weight: 600; line-height: 1.4; }
+  .opt-btn::before { content: "0" attr(data-i); display: block; margin-bottom: 6px; color: #315cff; font-family: 'Bungee', sans-serif; font-size: 10px; }
+  .opt-btn:hover { border-color: var(--ink); background: var(--gold); }
+
+  .loading-wrap { text-align: left; }
+  .loading-wrap .lw-label { min-height: 1.3em; margin-bottom: 18px; color: var(--ink); font-family: 'Bungee', sans-serif; font-size: 18px; }
+  .bar-outer { height: 16px; border: 2px solid var(--ink); border-radius: 0; background: transparent; }
+  .bar-inner { border-radius: 0; background: var(--pink); }
+  .bar-pct { color: #51534b; font-weight: 700; }
+  .roast { text-align: left; }
+  .roast .big-emoji { margin: 0 0 12px; font-size: 34px; }
+  .roast h2 { margin: 0 0 12px; color: var(--ink); font-size: 22px; line-height: 1.4; }
+  .roast p { color: #51534b; font-size: 13px; }
+  .match-badge { margin-bottom: 12px; padding: 5px 9px; border: 1px solid var(--ink); border-radius: 0; background: var(--gold); color: var(--ink); font-size: 10px; font-weight: 700; letter-spacing: 0.7px; }
+  .avatar-wrap { margin-bottom: 12px; }
+  .avatar-wrap img { width: 220px; height: 220px; max-height: none; aspect-ratio: 1; object-fit: cover; border: 2px solid var(--ink); border-radius: 2px; padding: 0; background: var(--gold); }
+  .result-name { margin: 0 0 2px; color: var(--ink); font-family: 'Bungee', sans-serif; font-size: 20px; font-weight: 400; line-height: 1.3; }
+  .result-tag { margin-bottom: 10px; color: #51534b; font-size: 11px; }
+  .result-bio { margin: 0 0 15px; padding: 10px 12px; border: 1px solid var(--ink); border-radius: 2px; background: #f1eee4; font-size: 12px; line-height: 1.45; }
+  .result-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+  .share-btn, .favorite-btn { padding: 9px 10px; background: var(--gold); }
+  .share-btn { background: var(--blue, #315cff); color: white; }
+  .favorite-btn.is-saved { background: var(--pink); }
+  .footer-note { margin: 18px 0 0; color: #51534b; font-size: 10px; font-weight: 700; letter-spacing: 0.7px; }
+
+  .favorites-dialog { width: min(480px, calc(100% - 32px)); max-height: min(75vh, 620px); padding: 22px; border: 3px solid var(--ink); border-radius: 2px; background: var(--cream); color: var(--ink); box-shadow: 8px 8px 0 var(--ink); }
+  .favorites-dialog::backdrop { background: rgba(25,27,22,0.65); }
+  .dialog-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+  .dialog-header h2 { margin: 0; font-family: 'Bungee', sans-serif; font-size: 18px; font-weight: 400; }
+  .close-dialog, .remove-favorite { min-height: 36px; padding: 6px 10px; background: var(--pink); }
+  .favorite-list { display: grid; gap: 8px; max-height: 52vh; overflow: auto; }
+  .favorite-item { display: grid; grid-template-columns: 54px 1fr auto; align-items: center; gap: 11px; padding: 8px; border: 1px solid var(--ink); }
+  .favorite-item img { width: 54px; height: 54px; object-fit: cover; background: var(--gold); }
+  .favorite-item strong { display: block; font-size: 12px; }
+  .favorite-item span { display: block; margin-top: 3px; color: #51534b; font-size: 10px; }
+  .favorites-empty { padding: 22px 0; color: #51534b; font-size: 13px; }
+
+  @keyframes enter-left { from { opacity: 0; transform: translateX(-12px); } to { opacity: 1; transform: translateX(0); } }
+  @keyframes enter-right { from { opacity: 0; transform: translateX(12px); } to { opacity: 1; transform: translateX(0); } }
+  @media (max-width: 800px) {
+    .layout { grid-template-columns: 1fr; gap: 25px; padding: 30px 0 40px; }
+    .editorial { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 18px; }
+    .editorial .eyebrow, .editorial h1, .editorial-copy, .stat-strip { grid-column: 1; }
+    .editorial h1 { font-size: 40px; }
+    .editorial-copy { margin-top: 12px; }
+    .mascot-scene { grid-column: 2; grid-row: 1 / span 3; flex-direction: column; margin: 0; }
+    .mascot-scene img { width: 108px; height: 108px; }
+    .mascot-stamp { width: 78px; height: 78px; font-size: 10px; }
+    .stat-strip { max-width: none; margin-top: 20px; }
+    .machine { justify-self: stretch; max-width: none; }
+    .screen { min-height: 420px; }
+  }
+  @media (max-width: 520px) {
+    .app-shell { width: min(100% - 28px, 440px); }
+    .masthead { min-height: 72px; gap: 8px; }
+    .brand-symbol { width: 36px; height: 36px; font-size: 18px; }
+    .brand-copy { font-size: 11px; }
+    .edition { display: none; }
+    .saved-open { min-height: 38px; padding: 0 9px; font-size: 11px; }
+    .layout { gap: 18px; padding-top: 22px; }
+    .editorial { grid-template-columns: minmax(0, 1fr) 90px; column-gap: 8px; }
+    .editorial h1 { font-size: 31px; }
+    .editorial-copy { font-size: 13px; }
+    .mascot-scene img { width: 82px; height: 82px; }
+    .mascot-stamp { width: 65px; height: 65px; padding: 6px; font-size: 9px; }
+    .stat { padding-top: 9px; padding-bottom: 9px; }
+    .stat strong { font-size: 14px; }
+    .stat span { font-size: 8px; }
+    .machine { padding: 9px; box-shadow: 6px 6px 0 var(--ink); }
+    .machine-topline { font-size: 8px; }
+    .screen { min-height: 400px; padding: 20px 16px; }
+    .intro h2 { font-size: 21px; }
+    .options { grid-template-columns: 1fr; }
+    .opt-btn { min-height: 58px; }
+    .opt-btn::before { display: inline; margin: 0 8px 0 0; }
+    .avatar-wrap img { width: min(220px, 100%); height: auto; }
+    .result-name { font-size: 17px; }
+    .footer-note { padding-bottom: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
 </style>
 </head>
 <body>
 
-<div class="machine">
-  <div class="brand">
-    <h1>Girlfriend Generator 3000</h1>
-    <div class="dot" title="Online"></div>
-  </div>
+<div class="app-shell">
+  <header class="masthead">
+    <a class="brand-lockup" href="./" aria-label="Girlfriend Generator 3000 home">
+      <span class="brand-symbol" aria-hidden="true">♥</span>
+      <span class="brand-copy">Girlfriend<br>Generator 3000</span>
+    </a>
+    <div class="edition">INDEPENDENTLY UNVERIFIED • VOL. 01</div>
+    <button class="saved-open" id="savedBtn" type="button" aria-label="Open saved matches">
+      <span aria-hidden="true">★</span><span>Saved</span><span class="saved-count" id="savedCount">0</span>
+    </button>
+  </header>
 
-  <div class="screen" id="screen">
-    <!-- content injected by JS -->
-  </div>
+  <main class="layout">
+    <section class="editorial" aria-labelledby="pageTitle">
+      <p class="eyebrow">LOVE IS A QUESTIONABLE ALGORITHM</p>
+      <h1 id="pageTitle">FIND YOUR<br>QUESTIONABLE<br>SOULMATE.</h1>
+      <p class="editorial-copy">Five questions. One suspiciously confident machine. Absolutely no peer-reviewed romance.</p>
+      <div class="mascot-scene">
+        <img src="https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Cupid-3000" alt="The generator's tiny robot mascot">
+        <div class="mascot-stamp">0%<br>ACCURATE</div>
+      </div>
+      <div class="stat-strip" aria-label="Generator statistics">
+        <div class="stat"><strong>115</strong><span>Questionable matches</span></div>
+        <div class="stat"><strong>103</strong><span>Roast outcomes</span></div>
+        <div class="stat"><strong>∞</strong><span>Bad decisions</span></div>
+      </div>
+    </section>
 
-  <div class="footer-note">100% scientific. 0% accurate.</div>
+    <section class="machine" aria-label="Girlfriend Generator game">
+      <div class="machine-topline"><span>GENERATOR / 3000</span><span class="machine-status">SYSTEM WEIRDLY ONLINE</span></div>
+      <div class="screen" id="screen" aria-live="polite"></div>
+    </section>
+  </main>
+  <footer class="footer-note">100% browser-based • 0% accurate • not responsible for your type</footer>
 </div>
+
+<dialog class="favorites-dialog" id="favoritesDialog" aria-labelledby="favoritesTitle">
+  <div class="dialog-header">
+    <h2 id="favoritesTitle">SAVED MATCHES</h2>
+    <button class="close-dialog" id="closeFavorites" type="button" aria-label="Close saved matches">Close</button>
+  </div>
+  <div class="favorite-list" id="favoriteList"></div>
+</dialog>
 
 <script>
 (function(){
   const screen = document.getElementById('screen');
+  const storageKey = 'girlfriend-generator-3000';
+  let savedState = {};
+  try { savedState = JSON.parse(localStorage.getItem(storageKey) || '{}'); } catch (error) { savedState = {}; }
+  let roastChance = Number(savedState.roastChance);
+  if (!Number.isFinite(roastChance) || roastChance < 5 || roastChance > 95) roastChance = 60;
+  let favorites = Array.isArray(savedState.favorites) ? savedState.favorites : [];
+
+  function saveState() {
+    try { localStorage.setItem(storageKey, JSON.stringify({ roastChance, favorites })); } catch (error) {}
+  }
+
+  function updateSavedCount() {
+    document.getElementById('savedCount').textContent = favorites.length;
+  }
+
+  function renderFavorites() {
+    const list = document.getElementById('favoriteList');
+    if (!favorites.length) {
+      list.innerHTML = '<p class="favorites-empty">No matches saved yet. The machine is waiting.</p>';
+      return;
+    }
+    list.innerHTML = favorites.map((person, index) => `
+      <div class="favorite-item">
+        <img src="${person.file.startsWith('https://') ? person.file : encodeURI(person.file)}" alt="">
+        <div><strong>${person.name}</strong><span>${person.tag}</span></div>
+        <button class="remove-favorite" type="button" data-remove="${index}" aria-label="Remove ${person.name}">Remove</button>
+      </div>
+    `).join('');
+    list.querySelectorAll('[data-remove]').forEach(button => {
+      button.addEventListener('click', () => {
+        favorites.splice(Number(button.dataset.remove), 1);
+        saveState();
+        updateSavedCount();
+        renderFavorites();
+      });
+    });
+  }
+
+  document.getElementById('savedBtn').addEventListener('click', () => {
+    renderFavorites();
+    document.getElementById('favoritesDialog').showModal();
+  });
+  document.getElementById('closeFavorites').addEventListener('click', () => document.getElementById('favoritesDialog').close());
+  document.getElementById('favoritesDialog').addEventListener('click', event => {
+    if (event.target === event.currentTarget) event.currentTarget.close();
+  });
 
   const questions = [
     {
@@ -359,6 +624,51 @@
     { name: "Wednesday",       file: "wednesday.jpg",            tag: "98% Match", bio: "Will not smile for the photo. Will not smile for anything.", weight: 1 }
   ];
 
+  const extraMatchNames = [
+    "Captain Side-Eye", "Duchess of Unread Messages", "Princess Puddle Boots", "Baroness Biscuit", "The Wi-Fi Witch",
+    "Lady Oat Milk", "Countess Crash Landing", "Miss Mildly Haunted", "Professor Pajamas", "Queen of the Group Chat",
+    "The Snack Goblin", "Disco Cryptid", "Socks-with-Sandals Sorceress", "Mysterious Bus Stop Girl", "Tiny Thunderstorm",
+    "Auntie from Another Dimension", "The Spreadsheet Siren", "Glitter Goblin", "Mothman’s Roommate", "The Last Brain Cell",
+    "Princess of Lost AirPods", "Barista of Destiny", "Lady Lint Roller", "The Unlicensed Mermaid", "Dame Dramatic Pause",
+    "Space Cowgirl Brenda", "The Soup Oracle", "Haunted Doll with Boundaries", "Miss Takes-the-Last-Fry", "Goblin CEO",
+    "Lady of the Laundry Pile", "The Emotional Support Vampire", "Queen Quinoa", "Cyberpunk Cinderella", "The Polite Menace",
+    "Duchess Doomscroll", "Agent 404", "The Tiny Tornado", "Lady Waffle House", "The Moon’s Intern",
+    "Princess Power Nap", "The Cryptid Next Door", "Baroness of Bad Puns", "Madame Mild Inconvenience", "The Parking Lot Phantom",
+    "Queen of Extra Sauce", "The Overthinking Fairy", "Sirena Sidequest", "Lady Last-Minute", "The Friendly Swamp Witch",
+    "Miss Can’t Pick a Movie", "Astronaut with Snacks", "The Velvet Menace", "Dame of the Desk Chair", "The Local Time Traveler",
+    "Princess Password Reset", "The Cozy Chaos", "Lady Carbonara", "The Accidental Supervillain", "Duchess of Tiny Bags",
+    "The Extremely Online Elf", "Queen of One More Episode", "Miss Suspiciously Specific", "The Backup Plan", "Lady Boba Fett",
+    "The Dramatic Pigeon Lawyer", "Princess of the Spare Charger", "The Midnight Librarian", "Baroness Bubble Tea", "The Unbothered Werewolf",
+    "Dame Fumbles-a-High-Five", "The Sofa Succubus", "Queen of the Wrong Exit", "Lady Definitely-not-a-Spy", "The Garden Goblin",
+    "Princess of Weird Little Hobbies", "The Snack-Time Necromancer", "Madame Plot Twist", "Miss Probably a Wizard", "The Chill Doomsday Prepper",
+    "Lady Soup Season", "The Freelance Mermaid", "Duchess of Voice Notes", "The Polka-Dot Phantom", "Queen of Mild Chaos",
+    "Princess of the Loading Screen", "The Undercover Grandmother", "Lady Actual Cannibal (of snacks)", "The Haunted Houseplant", "Dame No Context",
+    "The Celestial Cashier", "Miss Definitely Has a Spreadsheet", "The Goblin’s Landlord", "Queen of Unnecessary Lore", "Lady Not-A-Cat",
+    "The Backup Dancer", "Princess of the Side Quest", "The Friendly Final Boss", "Duchess of the Deep-Fried", "Your Algorithmic Soulmate-ish"
+  ];
+
+  const extraMatchBios = [
+    "Has excellent taste and a suspicious number of tabs open.",
+    "Will steal one fry, then defend the theft in court.",
+    "A mysterious vibe, a practical jacket, and absolutely no context.",
+    "Can turn a quick errand into a three-act adventure.",
+    "Knows a shortcut. It has never once been shorter.",
+    "Brings snacks, strong opinions, and a backup charger.",
+    "Seems intimidating until a dog walks by.",
+    "The algorithm insists this is a real person. The algorithm lies sometimes.",
+    "Will remember your coffee order and your most embarrassing story.",
+    "A rare combination of chaos, kindness, and excellent playlist curation."
+  ];
+
+  const extraMatches = extraMatchNames.map((name, index) => ({
+    name,
+    file: `https://api.dicebear.com/9.x/adventurer/svg?seed=${encodeURIComponent(name)}`,
+    tag: `${78 + (index % 23)}% Match`,
+    bio: extraMatchBios[index % extraMatchBios.length],
+    weight: 1
+  }));
+  matches.push(...extraMatches);
+
   function pickWeighted(list) {
     const totalWeight = list.reduce((sum, item) => sum + (item.weight || 1), 0);
     let roll = Math.random() * totalWeight;
@@ -373,11 +683,22 @@
     screen.innerHTML = `
       <div class="intro">
         <div class="big-emoji">💘</div>
-        <h2>Welcome to the Generator</h2>
-        <p>Answer 5 deeply scientific questions and our algorithm (two if-statements and a dream) will calculate your perfect match.</p>
-        <button class="start-btn" id="startBtn">Start the process</button>
+        <p class="eyebrow">CALIBRATE THE CHAOS</p>
+        <h2>Ready for questionable science?</h2>
+        <p>Answer five questions and let the machine make a deeply unserious decision.</p>
+        <div class="chance-control">
+          <div class="chance-heading"><label for="roastChance">Romance / roast balance</label><output id="roastChanceValue" for="roastChance">${roastChance}% roast</output></div>
+          <input class="chance-slider" id="roastChance" type="range" min="5" max="95" step="5" value="${roastChance}">
+          <div class="range-labels"><span>TRUE LOVE</span><span>PUBLIC HUMILIATION</span></div>
+        </div>
+        <button class="start-btn" id="startBtn" type="button">Begin the experiment <span aria-hidden="true">→</span></button>
       </div>
     `;
+    document.getElementById('roastChance').addEventListener('input', event => {
+      roastChance = Number(event.target.value);
+      document.getElementById('roastChanceValue').textContent = `${roastChance}% roast`;
+      saveState();
+    });
     document.getElementById('startBtn').addEventListener('click', () => {
       currentQ = 0;
       renderQuestion();
@@ -386,7 +707,7 @@
 
   function renderQuestion() {
     const q = questions[currentQ];
-    const track = questions.map((_, i) => `<span class="${i < currentQ ? 'done' : ''}"></span>`).join('');
+    const track = questions.map((_, i) => `<span class="${i <= currentQ ? 'done' : ''}"></span>`).join('');
     screen.innerHTML = `
       <div class="progress-track">${track}</div>
       <div class="q-label">${q.label}</div>
@@ -449,7 +770,7 @@
   }
 
   function renderResult() {
-    const isRoast = Math.random() < 0.35;
+    const isRoast = Math.random() < roastChance / 100;
     if (isRoast) {
       renderRoast();
     } else {
@@ -502,7 +823,65 @@
     "You get a participation trophy. It says 'Tried Their Best, Allegedly.'",
     "Nobody swiped right. Nobody swiped at all, actually.",
     "We checked the multiverse. You're single in most of them.",
-    "Your aura has been read. It says 'buffering.'"
+    "Your aura has been read. It says 'buffering.'",
+    "Your flirting style has been classified as a software update: inconvenient and repeatedly postponed.",
+    "The algorithm matched your confidence with your follow-through. They have never met.",
+    "Your romantic strategy appears to be standing nearby and hoping for subtitles.",
+    "We found your type: someone who can explain why you own three identical hoodies.",
+    "Your profile has the energy of a group project where you said 'I can help' and vanished.",
+    "Compatibility report: needs more sleep, fewer screenshots, and one conversation with a real person.",
+    "Your soulmate is searching too. They just toggled off 'show me people like this.'",
+    "You bring a lot to the table. Mostly empty snack wrappers, but still.",
+    "Your love language is saying 'we should hang out' and then entering witness protection.",
+    "The machine detected a spark. It was static from that hoodie.",
+    "You have the romantic mystery of a printer error message.",
+    "Your standards are high. Your opening line is 'hey' with a question mark if you're feeling brave.",
+    "We tried to find your match, but your last three texts were all memes with no explanation.",
+    "You are someone's type. That person may be fictional, but progress is progress.",
+    "The compatibility scan says: charming in theory, currently buffering in practice.",
+    "Your dream date called. They said to bring a reservation and a personality patch.",
+    "You have main-character energy in a scene where the main character is looking for parking.",
+    "Your romantic aura is giving 'forgot why I walked into this room.'",
+    "We matched you with a calendar reminder to reply to people.",
+    "Your flirting has been sent for peer review. The reviewers requested more evidence.",
+    "A match was found, but it was just your reflection checking if your hair looks okay.",
+    "You are one good haircut and two honest conversations away from being less confusing.",
+    "Your ideal partner is someone who can assemble furniture while you hold the instructions upside down.",
+    "The system recommends starting with 'hello' and not immediately explaining cryptocurrency.",
+    "You give off 'has a favorite spoon' energy. We respect it, from a distance.",
+    "Your love life is not a disaster. It's an experimental short film with no ending yet.",
+    "The algorithm found 100 potential matches and they all asked if you have snacks.",
+    "Your best quality is still loading. Please do not close this tab.",
+    "We would roast you more, but your browser history is already doing a strong job.",
+    "Your dating profile reads like a terms-and-conditions page nobody finished.",
+    "The algorithm says your type is 'someone who texts back before the next season.'",
+    "Your idea of making a move is standing up slightly straighter.",
+    "Your romantic instincts have been replaced by a calendar notification you keep snoozing.",
+    "You bring mystery to a date because even you don't know what the plan is.",
+    "Your best pickup line is probably 'sorry, I thought you were someone else.'",
+    "We detected chemistry. It was probably from mixing cleaning products. Please ventilate.",
+    "Your love life has more cliffhangers than a show that got canceled after season one.",
+    "Your profile says 'spontaneous' because you forgot to make plans again.",
+    "Your romantic aura is a low battery icon with 47 apps open.",
+    "You have a gift for turning 'how was your day?' into a three-hour lore dump.",
+    "The only sparks nearby are from the charger you keep bending at the plug.",
+    "Your flirting could use subtitles, a director's commentary, and a confidence boost.",
+    "You say you're easygoing, but choosing a restaurant takes a committee meeting.",
+    "Your heart is in the right place. Your phone's at 2% and you forgot your charger.",
+    "Your date-night outfit has been approved by the Council of Clean-ish Laundry.",
+    "You're not hard to get; you're just hard to schedule.",
+    "Your opening move is so subtle it may have been mistaken for a connectivity issue.",
+    "The algorithm found your match, but you both said 'you pick' until the restaurant closed.",
+    "Your romantic side is like a software feature: technically present, rarely seen in the wild.",
+    "You have the confidence of someone who just pressed 'reply all' by accident.",
+    "Your love language is sending a link with no explanation and expecting emotional support.",
+    "A promising connection was detected. Then you both sent 'haha yeah' and it timed out.",
+    "Your idea of a meet-cute is reaching for the same shopping basket and apologizing six times.",
+    "The machine recommends fewer awkward pauses and at least one snack in your pocket.",
+    "Your romantic arc is currently in the 'previously on...' section.",
+    "You have big date energy, but the reservation is for the wrong Tuesday.",
+    "Your charm is undeniable. The evidence is still being collected.",
+    "Your soulmate may be nearby, but your headphones are on noise-canceling mode."
   ];
 
   function renderRoast() {
@@ -518,22 +897,55 @@
     document.getElementById('againBtn').addEventListener('click', renderIntro);
   }
 
-  function renderMatch() {
-    const person = pickWeighted(matches);
+  function renderMatch(person = pickWeighted(matches)) {
+    const imageSrc = person.file.startsWith('https://') ? person.file : encodeURI(person.file);
+    const isSaved = favorites.some(saved => saved.name === person.name);
     screen.innerHTML = `
       <div class="result-card">
         <div class="match-badge">${person.tag}</div>
-        <div class="avatar-wrap"><img src="${encodeURI(person.file)}" alt="${person.name}" onerror="this.alt='(image not found: ${person.file})'; this.style.objectFit='contain';"></div>
+        <div class="avatar-wrap"><img src="${imageSrc}" alt="${person.name}" onerror="this.alt='(image not found: ${person.file})'; this.style.objectFit='contain';"></div>
         <div class="result-name">${person.name}</div>
         <div class="result-tag">Generated especially for you</div>
         <div class="result-bio">"${person.bio}"</div>
+        <div class="result-actions">
+          <button class="favorite-btn ${isSaved ? 'is-saved' : ''}" id="favoriteBtn" type="button">${isSaved ? '★ Saved' : '☆ Save match'}</button>
+          <button class="share-btn" id="shareBtn" type="button">↗ Share result</button>
+        </div>
         <button class="again-btn" id="againBtn">Generate again</button>
       </div>
     `;
+    document.getElementById('favoriteBtn').addEventListener('click', () => {
+      favorites = isSaved ? favorites.filter(saved => saved.name !== person.name) : [...favorites, person];
+      saveState();
+      updateSavedCount();
+      renderMatch(person);
+    });
+    document.getElementById('shareBtn').addEventListener('click', async event => {
+      const shareUrl = new URL(location.href);
+      shareUrl.hash = new URLSearchParams({ match: person.name }).toString();
+      try {
+        if (navigator.share) {
+          await navigator.share({ title: 'Girlfriend Generator 3000', text: `${person.name}: ${person.bio}`, url: shareUrl.href });
+        } else {
+          await navigator.clipboard.writeText(shareUrl.href);
+          event.currentTarget.textContent = '✓ Link copied';
+        }
+      } catch (error) {
+        if (error.name !== 'AbortError') event.currentTarget.textContent = 'Could not share';
+      }
+    });
     document.getElementById('againBtn').addEventListener('click', renderIntro);
   }
 
-  renderIntro();
+  function renderInitialView() {
+    const sharedName = new URLSearchParams(location.hash.slice(1)).get('match');
+    const sharedMatch = matches.find(person => person.name === sharedName);
+    if (sharedMatch) renderMatch(sharedMatch);
+    else renderIntro();
+  }
+
+  updateSavedCount();
+  renderInitialView();
 })();
 </script>
 
