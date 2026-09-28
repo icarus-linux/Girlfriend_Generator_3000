@@ -57,5 +57,6 @@ images/teresalisbon.jpg
 images/totaldrama island.jpg
 images/velma.jpeg
 images/wednesday.jpg
+images/sophieorange.jpeg
 images/youngtalor.jpeg
 images/Zendaya.2.webp
